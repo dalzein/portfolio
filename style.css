@@ -1,5 +1,6 @@
 :root {
   --background: tomato;
+  --yellow: gold;
   --accent-1: rgba(255, 255, 255, 0.1);
   --foreground: #fff;
   --foreground-secondary: #fff8;
@@ -15,7 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--foreground);
-  max-width: 80rem;
+  max-width: 60rem;
   padding: 0 1rem 1rem 1rem;
   margin: auto;
 }
@@ -101,15 +102,21 @@ header {
 }
 
 .icon-wrapper {
+  cursor: pointer;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: var(--accent-1);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--foreground);
-  border: 2px solid var(--accent-1);
+  border: 2px solid var(--yellow);
+  transition: all 0.2s linear;
+}
+
+.icon-wrapper:hover {
+  background-color: var(--yellow) !important;
+  color: var(--background);
 }
 
 .header-middle {
@@ -140,13 +147,18 @@ header {
 }
 
 @media (max-width: 768px) {
+  .header,
+  .about-section,
+  .projects-section {
+    margin-bottom: 5rem !important;
+  }
+
   .header {
-    justify-content: center;
-    margin-bottom: 5rem;
+    justify-content: center !important;
   }
 
   .header-middle {
-    display: none;
+    display: none !important;
   }
 
   .about-section h1 {
@@ -158,8 +170,14 @@ header {
     font-size: 1rem !important;
   }
 
-  .projects-section h2 {
+  .vertical-text {
+    font-size: 4rem !important;
+  }
+
+  .projects-section h2,
+  .contact-section h2 {
     font-size: 2.5rem !important;
+    margin-bottom: 2rem !important;
   }
 }
 
@@ -186,7 +204,7 @@ header {
 .subtitle {
   font-size: 2rem;
   margin-top: 1.5rem;
-  background-color: var(--foreground);
+  background-color: var(--yellow);
   color: var(--background);
   font-weight: 700;
   padding: 0 1rem;
@@ -200,6 +218,10 @@ header {
   text-align: right;
 }
 
+.projects-section {
+  margin-bottom: 10rem;
+}
+
 .projects-wrapper {
   display: flex;
   gap: 2rem;
@@ -208,7 +230,8 @@ header {
   flex-wrap: wrap;
 }
 
-.projects-section h2 {
+.projects-section h2,
+.contact-section h2 {
   text-align: center;
   line-height: 1;
   font-size: 3rem;
@@ -220,9 +243,45 @@ header {
   max-width: 25rem;
   height: 25rem;
   border-radius: 0.75rem;
-  border: 2px solid var(--accent-1);
   flex-shrink: 0;
   background-color: var(--accent-1);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 3px solid var(--accent-1);
+}
+
+.vertical-text {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  font-size: 6rem;
+  color: var(--foreground-secondary);
+}
+
+#code-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#code-wrapper p {
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  color: var(--foreground-secondary);
+}
+
+#code-wrapper p.active::after {
+  content: "";
+  width: 0.5rem;
+  height: 1.75rem;
+  background: var(--yellow);
+  display: inline-block;
+  margin-left: 0.5rem;
 }
 
 .project-wrapper {
@@ -266,16 +325,11 @@ header {
 .project-number {
   line-height: 1;
   font-size: 2rem;
-  top: 0.5rem;
-  left: 1rem;
 }
 
 .project-title {
-  font-size: 1rem;
-  top: 0.5rem;
-  left: 1rem;
   font-weight: 400;
-  color: var(--foreground-secondary);
+  color: var(--yellow);
 }
 
 .project-footer {
