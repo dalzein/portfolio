@@ -1,4 +1,4 @@
-const textArray = ["HTML", "CSS", "JS", "REACTJS", "ANGULAR", "NODEJS", ".NET"];
+const textArray = ["HTML", "CSS", "JAVASCRIPT", "REACTJS", "ANGULAR", "NODEJS", ".NET"];
 const codeBox = document.getElementById("code-wrapper");
 
 const writeLine = (text) =>
