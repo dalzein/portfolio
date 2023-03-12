@@ -385,7 +385,7 @@ a {
   padding: 0 0.5rem;
   border-radius: 0.75rem;
   border: 1px solid var(--accent-3);
-  color: var(--foreground-secondary);
+  color: var(--foreground);
   background-color: var(--accent-2);
 }
 
