@@ -45,7 +45,12 @@ writeLines(textArray);
 // Light/dark theme shenanigans
 const checkbox = document.getElementById("switch");
 
-if (localStorage.getItem("theme") === "dark") {
+if (
+  (window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches &&
+    localStorage.getItem("theme") !== "light") ||
+  localStorage.getItem("theme") === "dark"
+) {
   checkbox.checked = true;
   document.body.classList.toggle("dark");
 }
@@ -56,7 +61,7 @@ checkbox.addEventListener("change", () => {
   localStorage.setItem("theme", checkbox.checked ? "dark" : "light");
 });
 
-// Project wrapper click listeners
+// Project wrapper click listener
 document
   .getElementById("driftjs")
   .addEventListener("click", () => window.open("https://driftjs.io", "_blank"));
@@ -69,4 +74,11 @@ document
   .getElementById("deciball")
   .addEventListener("click", () =>
     window.open("https://deciball.io", "_blank")
+  );
+
+// Suppress bubbling from <a> clicks within wrapper
+document
+  .querySelectorAll(".project-wrapper a")
+  .forEach((element) =>
+    element.addEventListener("click", (e) => e.stopPropagation())
   );
