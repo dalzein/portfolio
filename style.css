@@ -23,12 +23,26 @@ body {
   margin: auto;
 }
 
+body.dark {
+  --background: #111;
+  --rose: gold;
+  --accent-1: #222;
+  --accent-2: #444;
+  --accent-3: #555;
+  --foreground: #fff;
+  --foreground-secondary: #888;
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header-wrapper {
@@ -44,7 +58,6 @@ header {
   align-items: center;
   padding: 1rem;
   position: relative;
-  border-right: 1px solid var(--accent-2);
 }
 
 .header-logo {
@@ -78,8 +91,83 @@ header {
   color: var(--foreground);
 }
 
-.header-name>span {
+.header-name > span {
   line-height: 1;
+}
+
+#switch {
+  display: none;
+}
+
+#switch + label {
+  height: 40px;
+  width: 80px;
+  border-radius: 40px;
+  position: relative;
+  transition: 0.2s all linear;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent-2);
+  border: 1px solid var(--accent-3);
+}
+
+#switch + label > .knob {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 34px;
+  width: 34px;
+  height: 34px;
+  transition: all 0.2s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+#switch:checked + label {
+  background-color: #333;
+}
+
+#switch:checked + label .sun {
+  opacity: 0;
+}
+
+#switch:checked + label .moon {
+  opacity: 1;
+}
+
+#switch:active + label > .knob {
+  width: 60px;
+}
+
+#switch:checked:active + label > .knob {
+  margin-left: -26px;
+}
+
+#switch:checked + label > .knob {
+  left: 42px;
+}
+
+.sun {
+  position: absolute;
+  font-size: 1.2rem;
+  color: var(--rose);
+  transition: all 0.2s ease-out;
+}
+
+.moon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: gold;
+  transition: all 0.2s ease-out;
+  opacity: 0;
 }
 
 .header-right {
@@ -87,18 +175,6 @@ header {
   gap: 1rem;
   align-items: center;
   padding: 1rem;
-}
-
-.header-item {
-  cursor: pointer;
-  color: var(--foreground-secondary);
-  transition: all 0.2s linear;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.header-item:hover {
-  color: var(--foreground);
 }
 
 .icon-wrapper {
@@ -123,7 +199,6 @@ header {
 .header-middle {
   display: flex;
   align-items: center;
-  gap: 3rem;
   padding: 1rem;
   width: 100%;
   justify-content: center;
@@ -133,8 +208,8 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 10rem;
+  gap: 4rem;
+  margin-bottom: 8rem;
   flex-wrap: wrap;
 }
 
@@ -165,24 +240,12 @@ header {
   text-align: right;
 }
 
-.projects-section {
-  margin-bottom: 10rem;
-}
-
-.projects-wrapper {
-  display: flex;
-  gap: 4rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .code-box {
   width: 100%;
   max-width: 25rem;
   height: 25rem;
   flex-shrink: 0;
-  padding: 2rem;
+  padding-top: 1rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -219,6 +282,22 @@ header {
   margin-left: 0.5rem;
 }
 
+.projects-section {
+  margin-bottom: 1rem;
+}
+
+.projects-wrapper {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.project-wrapper-link {
+  text-decoration: none;
+}
+
 .project-wrapper {
   border-radius: 0.75rem;
   border: 1px solid var(--accent-2);
@@ -244,8 +323,6 @@ header {
   width: 20rem;
   height: 20rem;
   border-radius: 0.75rem;
-  background-color: var(--background);
-  border: 1px solid var(--accent-2);
 }
 
 .project-wrapper:hover {
@@ -274,7 +351,6 @@ header {
   gap: 0.5rem;
 }
 
-
 .project-number {
   line-height: 1;
   font-size: 2rem;
@@ -301,7 +377,7 @@ header {
 
 .project-link:hover {
   background-color: var(--rose);
-  color: var(--background)
+  color: var(--background);
 }
 
 .project-footer {
@@ -340,23 +416,21 @@ header {
 }
 
 @media (max-width: 768px) {
-
   .header,
-  .about-section,
-  .projects-section {
-    margin-bottom: 5rem;
+  .about-section {
+    margin-bottom: 3rem;
   }
 
-  .header-wrapper {
-    width: inherit;
+  .header-right {
+    gap: 0.5rem;
   }
 
-  .header {
-    justify-content: center;
-  }
-
-  .header-middle {
+  .header-name {
     display: none;
+  }
+
+  .about-section {
+    gap: 3rem;
   }
 
   .about-section h1 {
@@ -365,7 +439,7 @@ header {
 
   .subtitle {
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .vertical-text {
@@ -379,7 +453,7 @@ header {
 
   .project-header,
   .project-footer {
-    padding: 1rem
+    padding: 1rem;
   }
 
   .project-body {
