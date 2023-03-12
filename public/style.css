@@ -250,7 +250,7 @@ a {
   line-height: 1;
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
-  font-size: 6rem;
+  font-size: 8rem;
   color: var(--foreground);
 }
 
@@ -435,8 +435,12 @@ a {
     font-size: 1.25rem;
   }
 
+  .code-box {
+    gap: 1rem;
+  }
+
   .vertical-text {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 
   .project-snippet {
