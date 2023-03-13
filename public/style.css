@@ -254,11 +254,11 @@ a {
 
 #code-wrapper p.active::after {
   content: "";
-  width: 0.5rem;
-  height: 1.75rem;
+  width: 0.25rem;
+  height: 1.25rem;
   background: var(--rose);
   display: inline-block;
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
 
 .projects-section {
