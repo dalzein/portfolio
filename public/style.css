@@ -4,8 +4,9 @@
   --accent-1: #fafafa;
   --accent-2: #eaeaea;
   --accent-3: #dadada;
-  --foreground: #333;
+  --foreground: #000;
   --foreground-secondary: #888;
+  --invertValue: 0;
 }
 
 :root.dark {
@@ -16,6 +17,7 @@
   --accent-3: #555;
   --foreground: #fff;
   --foreground-secondary: #888;
+  --invertValue: 1;
 }
 
 * {
@@ -52,12 +54,12 @@ a {
   border-radius: 0.75rem;
   border: 1px solid var(--accent-2);
   background-color: var(--accent-1);
+  padding: 0.75rem 1rem;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  padding: 1rem;
   position: relative;
 }
 
@@ -70,20 +72,14 @@ a {
   z-index: 1;
 }
 
-.initials {
-  font-family: "Oswald", sans-serif;
-  color: var(--background);
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1;
-  position: absolute;
-  top: 3px;
-  left: 6px;
+.logo {
+  height: 2.5rem;
+  filter: invert(var(--invertValue));
 }
 
 .header-name {
-  margin-left: 0.75rem;
-  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
   letter-spacing: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -175,7 +171,6 @@ a {
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 1rem;
 }
 
 .icon-wrapper {
@@ -386,7 +381,6 @@ a {
   border-radius: 0.75rem;
   border: 1px solid var(--accent-3);
   color: var(--foreground);
-  background-color: var(--accent-2);
 }
 
 .black {
