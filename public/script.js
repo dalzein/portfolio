@@ -3,11 +3,11 @@ const textArray = [
   "HTML",
   "CSS",
   "JAVASCRIPT",
+  "TYPESCRIPT",
   "REACTJS",
   "ANGULAR",
   "NODEJS",
   ".NET",
-  "Motorcycling!",
 ];
 const codeBox = document.getElementById("code-wrapper");
 

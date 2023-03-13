@@ -40,7 +40,7 @@ header {
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
-  margin-bottom: 8rem;
+  margin-bottom: 7rem;
 }
 
 a {
@@ -201,8 +201,7 @@ a {
 }
 
 .section-right {
-  width: 100%;
-  max-width: 25rem;
+  width: 18rem;
 }
 
 .subtitle {
@@ -224,11 +223,10 @@ a {
 .code-box {
   width: 100%;
   max-width: 25rem;
-  height: 25rem;
   flex-shrink: 0;
   padding-top: 1rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
 }
 
@@ -238,7 +236,7 @@ a {
   line-height: 1;
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
-  font-size: 8rem;
+  font-size: 7rem;
   color: var(--foreground);
 }
 
@@ -248,7 +246,7 @@ a {
 }
 
 #code-wrapper p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   color: var(--foreground-secondary);
@@ -411,7 +409,7 @@ a {
   }
 
   .about-section {
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .about-section h1 {
@@ -427,8 +425,8 @@ a {
     gap: 1rem;
   }
 
-  .vertical-text {
-    font-size: 6rem;
+  .projects-wrapper {
+    gap: 3rem;
   }
 
   .project-snippet {
