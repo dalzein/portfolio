@@ -44,6 +44,7 @@ header {
 }
 
 a {
+  -webkit-tap-highlight-color: transparent;
   text-decoration: none;
 }
 
@@ -88,6 +89,7 @@ a {
 }
 
 #switch + label {
+  -webkit-tap-highlight-color: transparent;
   height: 40px;
   width: 80px;
   border-radius: 40px;
