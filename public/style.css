@@ -8,6 +8,16 @@
   --foreground-secondary: #888;
 }
 
+:root.dark {
+  --background: #111;
+  --rose: gold;
+  --accent-1: #222;
+  --accent-2: #444;
+  --accent-3: #555;
+  --foreground: #fff;
+  --foreground-secondary: #888;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -21,16 +31,6 @@ body {
   max-width: 80rem;
   padding: 0 1rem 1rem 1rem;
   margin: auto;
-}
-
-body.dark {
-  --background: #111;
-  --rose: gold;
-  --accent-1: #222;
-  --accent-2: #444;
-  --accent-3: #555;
-  --foreground: #fff;
-  --foreground-secondary: #888;
 }
 
 header {

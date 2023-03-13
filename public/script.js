@@ -45,19 +45,10 @@ writeLines(textArray);
 // Light/dark theme shenanigans
 const checkbox = document.getElementById("switch");
 
-if (
-  (window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches &&
-    localStorage.getItem("theme") !== "light") ||
-  localStorage.getItem("theme") === "dark"
-) {
-  checkbox.checked = true;
-  document.body.classList.toggle("dark");
-}
+checkbox.checked = document.documentElement.classList.contains("dark");
 
 checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
-  console.log(checkbox.checked);
+  document.documentElement.classList.toggle("dark");
   localStorage.setItem("theme", checkbox.checked ? "dark" : "light");
 });
 
