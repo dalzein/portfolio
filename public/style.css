@@ -294,6 +294,7 @@ a {
   width: 100%;
   max-width: 22rem;
   border-radius: 0.75rem;
+  vertical-align: middle;
 }
 
 .project-wrapper:hover {
