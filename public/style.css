@@ -121,10 +121,6 @@ a {
   background-color: var(--background);
 }
 
-#switch:checked + label {
-  background-color: #333;
-}
-
 #switch:checked + label .sun {
   opacity: 0;
 }
@@ -189,7 +185,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 3rem;
   margin-bottom: 8rem;
   flex-wrap: wrap;
 }
@@ -201,7 +197,8 @@ a {
 }
 
 .section-right {
-  width: 18rem;
+  max-width: 25rem;
+  width: 100%;
 }
 
 .subtitle {
@@ -223,21 +220,7 @@ a {
 .code-box {
   width: 100%;
   max-width: 25rem;
-  flex-shrink: 0;
   padding-top: 1rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.vertical-text {
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
-  line-height: 1;
-  writing-mode: vertical-lr;
-  transform: rotate(-180deg);
-  font-size: 7rem;
-  color: var(--foreground);
 }
 
 #code-wrapper {
@@ -246,19 +229,27 @@ a {
 }
 
 #code-wrapper p {
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
+  font-size: 1.25rem;
   color: var(--foreground-secondary);
+}
+
+#code-wrapper p:not(:last-of-type) {
+  margin-bottom: 1rem;
 }
 
 #code-wrapper p.active::after {
   content: "";
-  width: 0.25rem;
-  height: 1.25rem;
+  width: 0.2rem;
+  height: 1.4rem;
   background: var(--rose);
   display: inline-block;
   margin-left: 0.25rem;
+  position: relative;
+  top: 0.25rem;
+}
+
+#code-wrapper p .accent {
+  color: var(--rose);
 }
 
 .projects-section {
@@ -300,8 +291,8 @@ a {
 }
 
 .project-snippet {
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  max-width: 22rem;
   border-radius: 0.75rem;
 }
 
@@ -375,11 +366,7 @@ a {
   color: var(--foreground);
 }
 
-.black {
-  color: #111;
-}
-
-@media (max-width: 925px) {
+@media (max-width: 941px) {
   .about-section {
     flex-direction: column;
     align-items: center;
@@ -390,6 +377,10 @@ a {
   }
 
   .about-section h1 {
+    text-align: center;
+  }
+
+  .code-box p {
     text-align: center;
   }
 }
@@ -421,17 +412,8 @@ a {
     font-size: 1.25rem;
   }
 
-  .code-box {
-    gap: 1rem;
-  }
-
   .projects-wrapper {
     gap: 3rem;
-  }
-
-  .project-snippet {
-    width: 18rem;
-    height: 18rem;
   }
 
   .project-header,

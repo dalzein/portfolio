@@ -1,34 +1,36 @@
 // Typewriter effect fun
 const textArray = [
-  "HTML",
-  "CSS",
-  "JAVASCRIPT",
-  "TYPESCRIPT",
-  "REACTJS",
-  "ANGULAR",
-  "NODEJS",
-  ".NET",
+  "<Hi there!> I'm a <full stack developer> with a bit of a thing for front end development.",
+  "I've got a passion for creating <unique, interactive and user-friendly experiences> with a high <attention to detail>.",
+  "I love <challenging myself>, and my projects reflect this. From draggable masonry algorithms to physics to audio visualising, I'm always finding ways to further <push myself and learn>!",
 ];
 const codeBox = document.getElementById("code-wrapper");
 
 // Recursively write letters in line until end of sentence
 const writeLine = (text) =>
   new Promise((resolve) => {
-    const el = document.createElement("p");
-    el.classList.add("active");
-    codeBox.appendChild(el);
+    const p = document.createElement("p");
+    p.classList.add("active");
+    codeBox.appendChild(p);
 
-    const write = (index) => {
-      if (index < textArray[0].length) {
-        el.innerHTML += text[index];
-        setTimeout(() => write(index + 1), 100);
+    const write = (text, el) => {
+      if (text[0] === "<") {
+        const span = document.createElement("span");
+        span.classList.add("accent");
+        el.appendChild(span);
+        setTimeout(() => write(text.substring(1), span), 25);
+      } else if (text[0] === ">") {
+        setTimeout(() => write(text.substring(1), p), 25);
+      } else if (text) {
+        el.innerHTML += text[0];
+        setTimeout(() => write(text.substring(1), el), 25);
       } else {
         el.classList.remove("active");
         resolve(true);
       }
     };
 
-    write(0);
+    write(text, p);
   });
 
 // Recursively write lines until end of array
