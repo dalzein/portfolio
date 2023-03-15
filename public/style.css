@@ -240,12 +240,12 @@ a {
 #code-wrapper p.active::after {
   content: "";
   width: 0.2rem;
-  height: 1.4rem;
+  height: 1.35rem;
   background: var(--rose);
   display: inline-block;
   margin-left: 0.25rem;
   position: relative;
-  top: 0.25rem;
+  top: 0.2rem;
 }
 
 #code-wrapper p .accent {

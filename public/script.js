@@ -23,7 +23,7 @@ const writeLine = (text) =>
         setTimeout(() => write(text.substring(1), p), 25);
       } else if (text) {
         el.innerHTML += text[0];
-        setTimeout(() => write(text.substring(1), el), 25);
+        setTimeout(() => write(text.substring(1), el), 10);
       } else {
         el.classList.remove("active");
         resolve(true);
