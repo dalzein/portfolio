@@ -1,6 +1,6 @@
 :root {
   --background: #fff;
-  --rose: #ff007f;
+  --accent-colour: #8f00ff;
   --accent-1: #fafafa;
   --accent-2: #eaeaea;
   --accent-3: #dadada;
@@ -11,7 +11,7 @@
 
 :root.dark {
   --background: #111;
-  --rose: gold;
+  --accent-colour: gold;
   --accent-1: #222;
   --accent-2: #444;
   --accent-3: #555;
@@ -144,7 +144,7 @@ a {
 .sun {
   position: absolute;
   font-size: 1.2rem;
-  color: var(--rose);
+  color: var(--accent-colour);
   transition: all 0.2s ease-out;
 }
 
@@ -170,14 +170,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--rose);
-  border: 1px solid var(--rose);
+  color: var(--accent-colour);
+  border: 1px solid var(--accent-colour);
   transition: all 0.2s linear;
   font-size: 1rem;
 }
 
 .icon-wrapper:hover {
-  background-color: var(--rose);
+  background-color: var(--accent-colour);
   color: var(--background);
 }
 
@@ -204,7 +204,7 @@ a {
 .subtitle {
   font-size: 2rem;
   margin-top: 1.5rem;
-  background-color: var(--rose);
+  background-color: var(--accent-colour);
   color: var(--background);
   padding: 0 0.75rem;
   border-radius: 0.5rem;
@@ -241,7 +241,7 @@ a {
   content: "";
   width: 0.2rem;
   height: 1.35rem;
-  background: var(--rose);
+  background: var(--accent-colour);
   display: inline-block;
   margin-left: 0.25rem;
   position: relative;
@@ -249,7 +249,7 @@ a {
 }
 
 #code-wrapper p .accent {
-  color: var(--rose);
+  color: var(--accent-colour);
 }
 
 .projects-section {
@@ -332,7 +332,7 @@ a {
   font-size: 1rem;
   line-height: 1;
   font-weight: 400;
-  color: var(--rose);
+  color: var(--accent-colour);
 }
 
 .project-link {
@@ -342,13 +342,13 @@ a {
   justify-content: center;
   align-items: center;
   border-radius: 2.25rem;
-  border: 1px solid var(--rose);
-  color: var(--rose);
+  border: 1px solid var(--accent-colour);
+  color: var(--accent-colour);
   transition: all 0.2s linear;
 }
 
 .project-link:hover {
-  background-color: var(--rose);
+  background-color: var(--accent-colour);
   color: var(--background);
 }
 
@@ -363,7 +363,7 @@ a {
 .project-tag {
   padding: 0 0.5rem;
   border-radius: 0.75rem;
-  border: 1px solid var(--accent-3);
+  border: 1px solid var(--foreground);
   color: var(--foreground);
 }
 
