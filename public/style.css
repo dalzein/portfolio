@@ -5,7 +5,7 @@
   --accent-2: #eaeaea;
   --accent-3: #dadada;
   --foreground: #000;
-  --foreground-secondary: #888;
+  --foreground-secondary: #666;
   --invertValue: 0;
 }
 
@@ -208,6 +208,7 @@ a {
   color: var(--background);
   padding: 0 0.75rem;
   border-radius: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .about-section h1 {
@@ -229,7 +230,7 @@ a {
 }
 
 #code-wrapper p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--foreground-secondary);
 }
 
@@ -239,13 +240,13 @@ a {
 
 #code-wrapper p.active::after {
   content: "";
-  width: 0.2rem;
-  height: 1.35rem;
+  width: 0.25rem;
+  height: 1.6rem;
   background: var(--accent-colour);
   display: inline-block;
-  margin-left: 0.25rem;
+  margin-left: 0.2rem;
   position: relative;
-  top: 0.2rem;
+  top: 0.25rem;
 }
 
 #code-wrapper p .accent {
@@ -371,6 +372,10 @@ a {
   .about-section {
     flex-direction: column;
     align-items: center;
+  }
+
+  .subtitle {
+    margin-right: 0;
   }
 
   .section-left {

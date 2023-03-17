@@ -1,8 +1,7 @@
 // Typewriter effect fun
 const textArray = [
-  "<Hi there!> I'm a <full stack developer> with a bit of a thing for front end development.",
-  "I've got a passion for creating <unique, interactive and user-friendly experiences> with a high <attention to detail>.",
-  "I love <challenging myself>, and my projects reflect this. From draggable masonry algorithms to physics to audio visualising, I'm always finding ways to further <push myself and learn>!",
+  "<Hi there!> I'm a <full stack developer> with a passion for creating <unique, interactive and user-friendly experiences>.",
+  "I'm always finding ways to <challenge myself>, especially through my projects, and have a constant hunger to <learn and improve>.",
 ];
 const codeBox = document.getElementById("code-wrapper");
 
@@ -18,12 +17,12 @@ const writeLine = (text) =>
         const span = document.createElement("span");
         span.classList.add("accent");
         el.appendChild(span);
-        setTimeout(() => write(text.substring(1), span), 25);
+        setTimeout(() => write(text.substring(1), span), 20);
       } else if (text[0] === ">") {
-        setTimeout(() => write(text.substring(1), p), 25);
+        setTimeout(() => write(text.substring(1), p), 20);
       } else if (text) {
         el.innerHTML += text[0];
-        setTimeout(() => write(text.substring(1), el), 10);
+        setTimeout(() => write(text.substring(1), el), 20);
       } else {
         el.classList.remove("active");
         resolve(true);
