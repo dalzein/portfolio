@@ -68,6 +68,12 @@ document
     window.open("https://deciball.io", "_blank")
   );
 
+document
+  .getElementById("absolutemasonry")
+  .addEventListener("click", () =>
+    window.open("https://github.com/dalzein/absolute-masonry", "_blank")
+  );
+
 // Suppress bubbling from <a> clicks within wrapper
 document
   .querySelectorAll(".project-wrapper a")
