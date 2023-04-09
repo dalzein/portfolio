@@ -74,6 +74,12 @@ document
     window.open("https://github.com/dalzein/absolute-masonry", "_blank")
   );
 
+document
+  .getElementById("spotifyplayer")
+  .addEventListener("click", () =>
+    window.open("https://github.com/dalzein/spotify-player", "_blank")
+  );
+
 // Suppress bubbling from <a> clicks within wrapper
 document
   .querySelectorAll(".project-wrapper a")
