@@ -111,7 +111,7 @@ header {
 }
 
 .theme-toggle:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .theme-slider {
@@ -143,12 +143,7 @@ header {
 }
 
 .icon-wrapper:hover > svg {
-  opacity: 0.6;
-}
-
-.sun,
-.moon {
-  transition: all 0.3s linear !important;
+  opacity: 0.5;
 }
 
 .moon {
