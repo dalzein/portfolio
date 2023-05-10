@@ -26,6 +26,7 @@
   margin: 0;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
+  transition: all 0.3s linear;
 }
 
 body {
@@ -40,7 +41,6 @@ body {
   margin: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: all 0.3s linear;
 }
 
 header {
@@ -83,8 +83,8 @@ header {
   align-items: center;
 }
 
-.header-name > span {
-  line-height: 1;
+.header-name span {
+  color: var(--foreground);
 }
 
 .header-right {
@@ -107,7 +107,6 @@ header {
   cursor: pointer;
   width: 2.25rem;
   height: 2.25rem;
-  transition: all 0.3s linear;
 }
 
 .theme-toggle:hover {
@@ -119,7 +118,6 @@ header {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  transition: all 0.3s linear;
   pointer-events: none;
 }
 
@@ -136,10 +134,12 @@ header {
 }
 
 .icon-wrapper > svg {
-  color: var(--foreground);
   width: 1.5rem;
   height: 1.5rem;
-  transition: all 0.3s linear;
+}
+
+.icon-wrapper path {
+  color: var(--foreground);
 }
 
 .icon-wrapper:hover > svg {
@@ -172,12 +172,16 @@ header {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   background-color: var(--foreground);
-  color: var(--background);
   padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
 }
 
+.subtitle > span {
+  color: var(--background);
+}
+
 .about-section h1 {
+  color: var(--foreground);
   font-family: "Oswald", sans-serif;
   line-height: 1;
   font-size: 5rem;
@@ -242,7 +246,6 @@ header {
   border: 1px solid var(--accent-2);
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s linear;
   background-color: var(--accent-1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
@@ -250,7 +253,6 @@ header {
 .project-body {
   position: relative;
   flex-shrink: 0;
-  transition: all 0.3s linear;
   overflow: hidden;
   padding: 0 2rem;
 }
@@ -289,6 +291,7 @@ header {
 }
 
 .project-title {
+  color: var(--foreground);
   font-size: 1.25rem;
   line-height: 1;
   font-weight: 400;
@@ -311,6 +314,7 @@ header {
   padding: 0 0.75rem;
   border-radius: 2rem;
   background-color: var(--accent-2);
+  color: var(--foreground);
 }
 
 @media (max-width: 768px) {
