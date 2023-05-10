@@ -109,8 +109,8 @@ header {
   height: 2.25rem;
 }
 
-.theme-toggle:hover {
-  opacity: 0.5;
+.theme-toggle:hover path {
+  color: var(--foreground);
 }
 
 .theme-slider {
@@ -139,11 +139,11 @@ header {
 }
 
 .icon-wrapper path {
-  color: var(--foreground);
+  color: var(--foreground-secondary);
 }
 
-.icon-wrapper:hover > svg {
-  opacity: 0.5;
+.icon-wrapper:hover path {
+  color: var(--foreground);
 }
 
 .moon {
