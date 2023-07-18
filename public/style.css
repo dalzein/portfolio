@@ -294,7 +294,7 @@ header {
   color: var(--foreground);
   font-size: 1.25rem;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .project-footer {
@@ -324,10 +324,6 @@ header {
 
   .about-section {
     margin-bottom: 3rem;
-  }
-
-  .header-right {
-    gap: 0.5rem;
   }
 
   .header-name {
