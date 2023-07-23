@@ -1,6 +1,5 @@
 :root {
   --background: #fff;
-  --background-pattern: radial-gradient(#0001 1px, transparent 1px);
   --accent-1: #fafafa;
   --accent-2: #eaeaea;
   --accent-3: #dadada;
@@ -11,7 +10,6 @@
 
 :root.dark {
   --background: #111;
-  --background-pattern: radial-gradient(#fff1 1px, transparent 1px);
   --accent-1: #222;
   --accent-2: #444;
   --accent-3: #555;
@@ -32,9 +30,6 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--background);
-  background-image: var(--background-pattern);
-  background-size: 20px 20px;
-  background-repeat: repeat;
   color: var(--foreground);
   max-width: 60rem;
   padding: 0 1rem 1rem 1rem;
@@ -292,7 +287,7 @@ header {
 
 .project-title {
   color: var(--foreground);
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1;
   font-weight: 400;
 }
@@ -312,7 +307,7 @@ header {
   height: 2rem;
   min-width: 2rem;
   padding: 0 0.75rem;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   background-color: var(--accent-2);
   color: var(--foreground);
 }
