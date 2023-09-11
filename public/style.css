@@ -3,6 +3,8 @@
   --accent-1: #fafafa;
   --accent-2: #eaeaea;
   --accent-3: #dadada;
+  --accent-alpha-1: rgba(0, 0, 0, 0.1);
+  --accent-alpha-2: rgba(0, 0, 0, 0.15);
   --foreground: #111;
   --foreground-secondary: #666;
   --invertValue: 0;
@@ -13,6 +15,8 @@
   --accent-1: #222;
   --accent-2: #444;
   --accent-3: #555;
+  --accent-alpha-1: rgba(255, 255, 255, 0.1);
+  --accent-alpha-2: rgba(255, 255, 255, 0.15);
   --foreground: #fff;
   --foreground-secondary: #888;
   --invertValue: 1;
@@ -24,7 +28,7 @@
   margin: 0;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  transition: all 0.3s linear;
+  transition: all 150ms linear;
 }
 
 body {
@@ -96,6 +100,13 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.icon-wrapper:hover {
+  background-color: var(--accent-alpha-1);
+  border-color: var(--accent-alpha-2);
 }
 
 .theme-toggle {
@@ -237,16 +248,12 @@ header {
 }
 
 .project-wrapper {
-  border-radius: 0.5rem;
-  border: 1px solid var(--accent-2);
+  border-radius: 1.5rem;
+  border: 1px solid var(--accent-3);
   cursor: pointer;
   overflow: hidden;
   background-color: var(--accent-1);
-  box-shadow: 0 48px 100px rgba(0, 0, 0, 0.1);
-}
-
-.project-wrapper:hover {
-  box-shadow: 0 48px 100px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.2);
 }
 
 .project-body {
@@ -259,7 +266,7 @@ header {
 .project-snippet {
   width: 100%;
   max-width: 22rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   vertical-align: middle;
 }
 
