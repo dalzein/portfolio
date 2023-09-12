@@ -111,10 +111,6 @@ header {
   height: 2.25rem;
 }
 
-.theme-toggle:hover path {
-  color: var(--foreground);
-}
-
 .theme-slider {
   margin-top: -2.25rem;
   display: flex;
@@ -141,10 +137,6 @@ header {
 }
 
 .icon-wrapper path {
-  color: var(--foreground-secondary);
-}
-
-.icon-wrapper:hover path {
   color: var(--foreground);
 }
 
