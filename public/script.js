@@ -1,6 +1,6 @@
 // Typewriter effect fun
 const textArray = [
-  "I have a passion for creating unique and interactive user experiences!",
+  "Developer with a passion for creating unique and interactive user experiences",
 ];
 const codeBox = document.getElementById("code-wrapper");
 
@@ -12,6 +12,8 @@ const writeLine = (text) =>
     codeBox.appendChild(p);
 
     const write = (text, el) => {
+      // Check for "<" and ">" tags which we'll use to indicate text that needs accenting
+      // If found, we'll wrap the inner text in a span and give it a class we can target with CSS if ever want to
       if (text[0] === "<") {
         const span = document.createElement("span");
         span.classList.add("accent");
@@ -74,13 +76,7 @@ document
     window.open("https://github.com/dalzein/absolute-masonry", "_blank")
   );
 
-document
-  .getElementById("spotifyplayer")
-  .addEventListener("click", () =>
-    window.open("https://github.com/dalzein/spotify-player", "_blank")
-  );
-
-// Suppress bubbling from <a> clicks within wrapper
+// Suppress bubbling from anchor clicks within wrapper
 document
   .querySelectorAll(".project-wrapper a")
   .forEach((element) =>

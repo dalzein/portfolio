@@ -2,7 +2,6 @@
   --background: #fff;
   --accent-1: #fafafa;
   --accent-2: #eaeaea;
-  --accent-alpha-1: rgba(0, 0, 0, 0.1);
   --foreground: #111;
   --foreground-secondary: #666;
   --invertValue: 0;
@@ -13,7 +12,6 @@
   --background: #111;
   --accent-1: #222;
   --accent-2: #444;
-  --accent-alpha-1: rgba(255, 255, 255, 0.1);
   --foreground: #fff;
   --foreground-secondary: #888;
   --invertValue: 1;
@@ -85,7 +83,7 @@ header {
 
 .header-right {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
@@ -102,7 +100,8 @@ header {
 }
 
 .icon-wrapper:hover {
-  background-color: var(--accent-alpha-1);
+  background-color: var(--accent-1);
+  border-color: var(--accent-2);
 }
 
 .theme-toggle {
@@ -154,26 +153,6 @@ header {
   margin-bottom: 6rem;
 }
 
-.about-section > p {
-  font-size: 1.5rem;
-  color: var(--foreground);
-}
-
-.subtitle {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-  background-color: var(--foreground);
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.5rem;
-}
-
-.subtitle > span {
-  color: var(--background);
-}
-
 .about-section h1 {
   color: var(--foreground);
   font-family: "Oswald", sans-serif;
@@ -184,7 +163,7 @@ header {
 
 .code-box {
   height: 8rem;
-  max-width: 26rem;
+  max-width: 30rem;
 }
 
 #code-wrapper {
@@ -194,9 +173,9 @@ header {
 
 #code-wrapper p {
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  color: var(--foreground);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--foreground-secondary);
 }
 
 #code-wrapper p:not(:last-of-type) {
@@ -206,8 +185,8 @@ header {
 #code-wrapper p.active::after {
   content: "";
   width: 0.25rem;
-  height: 1.6rem;
-  background: var(--foreground);
+  height: 1.4rem;
+  background: #ff79c6;
   display: inline-block;
   margin-left: 0.2rem;
   position: relative;
@@ -240,8 +219,8 @@ header {
   border: 1px solid var(--accent-2);
   cursor: pointer;
   overflow: hidden;
-  background-color: var(--accent-1);
   box-shadow: var(--shadow);
+  max-width: 25rem;
 }
 
 .project-body {
@@ -253,14 +232,13 @@ header {
 
 .project-snippet {
   width: 100%;
-  max-width: 22rem;
   border-radius: 1rem;
   vertical-align: middle;
 }
 
 .project-header {
   width: 100%;
-  padding: 2rem 2rem 1rem;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -270,21 +248,25 @@ header {
 .project-header-left {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
 .project-header-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .project-title {
   color: var(--foreground);
   font-size: 1rem;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 700;
+}
+
+.project-description {
+  color: var(--foreground-secondary);
+  font-size: 0.875rem;
 }
 
 .project-footer {
@@ -303,17 +285,14 @@ header {
   min-width: 2rem;
   padding: 0 0.75rem;
   border-radius: 0.5rem;
-  background-color: var(--accent-2);
+  background-color: var(--accent-1);
   color: var(--foreground);
+  border: 1px solid var(--accent-2);
 }
 
 @media (max-width: 768px) {
   .header {
     margin-bottom: 5rem;
-  }
-
-  .about-section {
-    margin-bottom: 3rem;
   }
 
   .header-name {
@@ -328,40 +307,11 @@ header {
     font-size: 3rem;
   }
 
-  .subtitle {
-    font-size: 1rem;
+  .about-section {
+    margin-bottom: 3rem;
   }
 
   .code-box {
-    max-width: 18rem;
-  }
-
-  #code-wrapper p {
-    font-size: 1.2rem;
-    line-height: 2rem;
-  }
-
-  #code-wrapper p.active::after {
-    content: "";
-    width: 0.2rem;
-    height: 1.25rem;
-    background: var(--foreground);
-    display: inline-block;
-    margin-left: 0.1rem;
-    position: relative;
-    top: 0.2rem;
-  }
-
-  .projects-wrapper {
-    gap: 3rem;
-  }
-
-  .project-header,
-  .project-footer {
-    padding: 1rem;
-  }
-
-  .project-body {
     padding: 0 1rem;
   }
 }
