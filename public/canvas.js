@@ -77,7 +77,7 @@ function renderDots() {
     for (let j = i + 1; j < dotCoordinates.length; j++) {
       if (j === dotCoordinates.length) break;
       const targetDot = dotCoordinates[j];
-      
+
       // If distance to other dot is short enough, store its coordinates so we can connect the dots later
       const distanceFromTargetDot = Math.sqrt(
         Math.pow(targetDot.x - dot.x, 2) + Math.pow(targetDot.y - dot.y, 2)
@@ -110,11 +110,8 @@ function renderDots() {
     }
 
     // Draw the lines to the dots based on connection array
-    const isDarkTheme = document.documentElement.classList.contains("dark");
     dot.connectedDots.forEach((connectedDot) => {
-      ctx.strokeStyle = isDarkTheme
-        ? `rgba(255, 255, 255, ${connectedDot.opacity})`
-        : `rgba(0, 0, 0, ${connectedDot.opacity})`;
+      ctx.strokeStyle = `rgba(127, 127, 127, ${connectedDot.opacity})`;
       ctx.beginPath();
       ctx.moveTo(dot.x, dot.y);
       ctx.lineTo(connectedDot.x, connectedDot.y);
@@ -126,7 +123,7 @@ function renderDots() {
     ctx.beginPath();
     ctx.arc(dot.x, dot.y, 1, 0, 2 * Math.PI);
     ctx.closePath();
-    ctx.fillStyle = isDarkTheme ? "#fff" : "#000";
+    ctx.fillStyle = "rgb(127, 127, 127)";
     ctx.fill();
   }
 }
