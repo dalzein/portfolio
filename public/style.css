@@ -45,6 +45,13 @@ header {
   margin-bottom: 8rem;
 }
 
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .header-wrapper {
   width: 100%;
   display: flex;
@@ -175,7 +182,7 @@ header {
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.5;
-  color: var(--foreground-secondary);
+  color: var(--foreground);
 }
 
 #code-wrapper p:not(:last-of-type) {
@@ -221,6 +228,7 @@ header {
   overflow: hidden;
   box-shadow: var(--shadow);
   max-width: 25rem;
+  backdrop-filter: blur(5px);
 }
 
 .project-body {
