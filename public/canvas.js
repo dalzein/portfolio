@@ -15,7 +15,7 @@ function setInitialDotCoordinates() {
     dotCoordinates.push({
       x: Math.floor(Math.random() * canvas.width),
       y: Math.floor(Math.random() * canvas.height),
-      speed: Math.random() * 0.5 + 0.1,
+      speed: Math.random() * 2 + 0.1,
       angle: Math.floor(Math.random() * 360),
       connectedDots: [],
     });
@@ -130,8 +130,6 @@ function renderDots() {
 
 // Animation loop
 function draw() {
-  requestAnimationFrame(draw);
-
   canvas.width = window.innerWidth;
   canvas.height = document.body.scrollHeight;
 
@@ -140,4 +138,22 @@ function draw() {
   renderDots();
 }
 
-draw();
+// Animation is tied to refresh rate so we need to force 60 FPS
+function throttleAnimationLoop(func) {
+  let then = new Date().getTime();
+  let fps = 60;
+  let interval = 1000 / fps;
+
+  (function loop() {
+    requestAnimationFrame(loop);
+    let now = new Date().getTime();
+    let delta = now - then;
+
+    if (delta > interval) {
+      then = now - (delta % interval);
+      func();
+    }
+  })();
+}
+
+throttleAnimationLoop(draw);
