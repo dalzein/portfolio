@@ -43,8 +43,8 @@ const writeLines = (lines, charDelay = 30) => {
 
 const writeLineWithChangingText = (
   text,
-  charWriteDelay = 50,
-  charDeleteDelay = 50,
+  charWriteDelay = 30,
+  charDeleteDelay = 30,
   pauseTime = 2000
 ) => {
   const p = document.createElement("p");
