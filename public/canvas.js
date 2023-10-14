@@ -5,7 +5,7 @@ canvas.height = document.body.scrollHeight;
 let ctx = canvas.getContext("2d");
 let numberOfDots = Math.floor((canvas.width * canvas.height) / 20000);
 let dotCoordinates = [];
-const connectDistance = 350;
+const connectDistance = 200;
 let mouseX;
 let mouseY;
 
@@ -68,63 +68,101 @@ function updateDotCoordinates() {
   });
 }
 
-// Draw the dots
+// Render triangle
+function drawTriangle(
+  firstCoordinate,
+  secondCoordinate,
+  thirdCoordinate,
+  totalDistance
+) {
+  ctx.beginPath();
+  ctx.moveTo(firstCoordinate.x, firstCoordinate.y);
+  ctx.lineTo(secondCoordinate.x, secondCoordinate.y);
+  ctx.lineTo(thirdCoordinate.x, thirdCoordinate.y);
+  ctx.closePath();
+  
+  ctx.fillStyle = `rgba(127, 127, 127, ${Math.pow(
+    1 - totalDistance / (3 * connectDistance),
+    3
+  )}`;
+  ctx.fill();
+}
+
+// Render dot
+function drawDot(coordinates) {
+  ctx.beginPath();
+  ctx.arc(coordinates.x, coordinates.y, 1, 0, 2 * Math.PI);
+  ctx.closePath();
+
+  ctx.fillStyle = "rgb(127, 127, 127)";
+  ctx.fill();
+}
+
+// Render dots and all possible triangles
 function renderDots() {
-  // Loop through each dot
   for (let i = 0; i < dotCoordinates.length; i++) {
-    const dot = dotCoordinates[i];
-    // Loop through remainder of dot array to check distance to other dots
+    const firstCoordinates = dotCoordinates[i];
+    drawDot(firstCoordinates);
     for (let j = i + 1; j < dotCoordinates.length; j++) {
       if (j === dotCoordinates.length) break;
-      const targetDot = dotCoordinates[j];
-
-      // If distance to other dot is short enough, store its coordinates so we can connect the dots later
-      const distanceFromTargetDot = Math.sqrt(
-        Math.pow(targetDot.x - dot.x, 2) + Math.pow(targetDot.y - dot.y, 2)
+      const secondCoordinates = dotCoordinates[j];
+      const distanceFromFirstToSecondCoordinates = Math.sqrt(
+        Math.pow(secondCoordinates.x - firstCoordinates.x, 2) +
+          Math.pow(secondCoordinates.y - firstCoordinates.y, 2)
       );
-      if (distanceFromTargetDot <= connectDistance) {
-        dot.connectedDots.push({
-          x: targetDot.x,
-          y: targetDot.y,
-          opacity: Math.pow(
-            (connectDistance - distanceFromTargetDot) / connectDistance,
-            3
-          ),
-        });
+      if (distanceFromFirstToSecondCoordinates <= connectDistance) {
+        for (let k = j + 1; k < dotCoordinates.length; k++) {
+          if (k === dotCoordinates.length) break;
+          const thirdCoordinates = dotCoordinates[k];
+
+          const distanceFromFirstToThirdCoordinates = Math.sqrt(
+            Math.pow(thirdCoordinates.x - firstCoordinates.x, 2) +
+              Math.pow(thirdCoordinates.y - firstCoordinates.y, 2)
+          );
+
+          const distanceFromSecondToThirdCoordinates = Math.sqrt(
+            Math.pow(thirdCoordinates.x - secondCoordinates.x, 2) +
+              Math.pow(thirdCoordinates.y - secondCoordinates.y, 2)
+          );
+
+          if (
+            distanceFromFirstToThirdCoordinates <= connectDistance &&
+            distanceFromSecondToThirdCoordinates <= connectDistance
+          ) {
+            drawTriangle(
+              firstCoordinates,
+              secondCoordinates,
+              thirdCoordinates,
+              distanceFromFirstToSecondCoordinates +
+                distanceFromFirstToThirdCoordinates +
+                distanceFromSecondToThirdCoordinates
+            );
+          }
+        }
+
+        const distanceFromFirstCoordinatesToMouse = Math.sqrt(
+          Math.pow(mouseX - firstCoordinates.x, 2) +
+            Math.pow(mouseY - firstCoordinates.y, 2)
+        );
+        const distanceFromSecondCoordinatesToMouse = Math.sqrt(
+          Math.pow(mouseX - secondCoordinates.x, 2) +
+            Math.pow(mouseY - secondCoordinates.y, 2)
+        );
+        if (
+          distanceFromFirstCoordinatesToMouse <= connectDistance &&
+          distanceFromSecondCoordinatesToMouse <= connectDistance
+        ) {
+          drawTriangle(
+            firstCoordinates,
+            secondCoordinates,
+            { x: mouseX, y: mouseY },
+            distanceFromFirstToSecondCoordinates +
+              distanceFromFirstCoordinatesToMouse +
+              distanceFromSecondCoordinatesToMouse
+          );
+        }
       }
     }
-
-    // Store cursor coordinates in connection array for this dot if the distance between them is short enough
-    const distanceFromMouse = Math.sqrt(
-      Math.pow(mouseX - dot.x, 2) + Math.pow(mouseY - dot.y, 2)
-    );
-    if (distanceFromMouse <= connectDistance) {
-      dot.connectedDots.push({
-        x: mouseX,
-        y: mouseY,
-        opacity: Math.pow(
-          (connectDistance - distanceFromMouse) / connectDistance,
-          3
-        ),
-      });
-    }
-
-    // Draw the lines to the dots based on connection array
-    dot.connectedDots.forEach((connectedDot) => {
-      ctx.strokeStyle = `rgba(127, 127, 127, ${connectedDot.opacity})`;
-      ctx.beginPath();
-      ctx.moveTo(dot.x, dot.y);
-      ctx.lineTo(connectedDot.x, connectedDot.y);
-      ctx.stroke();
-      ctx.closePath();
-    });
-
-    // Draw the dot itself
-    ctx.beginPath();
-    ctx.arc(dot.x, dot.y, 1, 0, 2 * Math.PI);
-    ctx.closePath();
-    ctx.fillStyle = "rgb(127, 127, 127)";
-    ctx.fill();
   }
 }
 
