@@ -155,20 +155,11 @@ canvas {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
   margin-bottom: 6rem;
 }
 
-.about-section h1 {
-  color: var(--foreground);
-  font-family: "Oswald", sans-serif;
-  line-height: 1;
-  font-size: 5rem;
-  white-space: nowrap;
-}
-
 .code-box {
-  height: 4rem;
+  height: 8rem;
   max-width: 30rem;
 }
 
@@ -179,8 +170,9 @@ canvas {
 
 #code-wrapper p {
   text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
   color: var(--foreground);
 }
 
@@ -191,16 +183,12 @@ canvas {
 #code-wrapper p.active::after {
   content: "";
   width: 0.25rem;
-  height: 1.4rem;
+  height: 2.25rem;
   background: var(--orange);
   display: inline-block;
-  margin-left: 0.2rem;
+  margin-left: 0.25rem;
   position: relative;
-  top: 0.25rem;
-}
-
-#code-wrapper p.active.blink::after {
-  animation: blink infinite 1s step-end;
+  top: 0.4rem;
 }
 
 @keyframes blink {
@@ -329,7 +317,7 @@ canvas {
   }
 
   .about-section {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
   .code-box {
