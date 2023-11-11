@@ -1,5 +1,5 @@
 // Typewriter effect fun
-const text = ["Developer with a passion for <creating.>"];
+const text = ["Full-Stack Developer with a passion for <creating.>"];
 
 const codeBox = document.getElementById("code-wrapper");
 

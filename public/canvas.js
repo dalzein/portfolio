@@ -80,11 +80,10 @@ function drawTriangle(
   ctx.lineTo(secondCoordinate.x, secondCoordinate.y);
   ctx.lineTo(thirdCoordinate.x, thirdCoordinate.y);
   ctx.closePath();
-  
-  ctx.fillStyle = `rgba(127, 127, 127, ${Math.pow(
-    1 - totalDistance / (3 * connectDistance),
-    3
-  )}`;
+
+  ctx.fillStyle = `rgba(127, 127, 127, ${
+    0.5 * Math.pow(1 - totalDistance / (3 * connectDistance), 3)
+  }`;
   ctx.fill();
 }
 
