@@ -33,7 +33,7 @@ const writeLine = (text, charDelay = 30) =>
   });
 
 // Recursively write lines until end of array
-const writeLines = (lines, charDelay = 50) => {
+const writeLines = (lines, charDelay = 40) => {
   lines.length &&
     writeLine(lines[0], charDelay).then(() => {
       lines.shift();
