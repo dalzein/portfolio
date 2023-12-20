@@ -1,15 +1,14 @@
 // Typewriter effect fun
-const text = ["Full-Stack Developer with a passion for <creating.>"];
+const text = [
+  "Hello!",
+  "I'm a full-stack developer that likes to make cool stuff :)",
+];
 
 const codeBox = document.getElementById("code-wrapper");
 
 // Recursively write letters in line until end of sentence
-const writeLine = (text, charDelay = 30) =>
+const writeLine = (p, text, charDelay = 30) =>
   new Promise((resolve) => {
-    const p = document.createElement("p");
-    p.classList.add("active");
-    codeBox.appendChild(p);
-
     const write = (text, el) => {
       // Check for "<" and ">" tags which we'll use to indicate text that needs accenting
       // If found, we'll wrap the inner text in a span and give it a class we can target with CSS if ever want to
@@ -24,7 +23,6 @@ const writeLine = (text, charDelay = 30) =>
         el.innerHTML += text[0];
         setTimeout(() => write(text.substring(1), el), charDelay);
       } else {
-        el.classList.remove("active");
         resolve(true);
       }
     };
@@ -34,11 +32,21 @@ const writeLine = (text, charDelay = 30) =>
 
 // Recursively write lines until end of array
 const writeLines = (lines, charDelay = 40) => {
-  lines.length &&
-    writeLine(lines[0], charDelay).then(() => {
-      lines.shift();
+  if (!lines.length) return;
+
+  const p = document.createElement("p");
+  p.classList.add("active");
+  codeBox.appendChild(p);
+
+  writeLine(p, lines[0], charDelay).then(() => {
+    lines.shift();
+    p.classList.add("blink");
+    setTimeout(() => {
+      p.classList.remove("active");
+      p.classList.remove("blink");
       writeLines(lines, charDelay);
-    });
+    }, 1000);
+  });
 };
 
 const writeLineWithChangingText = (
@@ -114,7 +122,7 @@ const deleteText = (el, delay) =>
     deleteChar();
   });
 
-writeLines(text);
+setTimeout(() => writeLines(text), 250);
 
 // Light/dark theme shenanigans
 const themeToggle = document.querySelector(".theme-toggle");

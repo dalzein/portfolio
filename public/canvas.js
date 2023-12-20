@@ -82,7 +82,7 @@ function drawTriangle(
   ctx.closePath();
 
   ctx.fillStyle = `rgba(127, 127, 127, ${
-    0.5 * Math.pow(1 - totalDistance / (3 * connectDistance), 3)
+    0.2 * Math.pow(1 - totalDistance / (3 * connectDistance), 3)
   }`;
   ctx.fill();
 }
@@ -93,7 +93,7 @@ function drawDot(coordinates) {
   ctx.arc(coordinates.x, coordinates.y, 1, 0, 2 * Math.PI);
   ctx.closePath();
 
-  ctx.fillStyle = "rgb(127, 127, 127)";
+  ctx.fillStyle = "rgba(127, 127, 127, 0.5)";
   ctx.fill();
 }
 
