@@ -10,7 +10,7 @@ let mouseX;
 let mouseY;
 
 // Set up dot coordinates
-function setInitialDotCoordinates() {
+const setInitialDotCoordinates = () => {
   for (let i = 0; i < numberOfDots; i++) {
     dotCoordinates.push({
       x: Math.floor(Math.random() * canvas.width),
@@ -20,12 +20,12 @@ function setInitialDotCoordinates() {
       connectedDots: [],
     });
   }
-}
+};
 
 setInitialDotCoordinates();
 
 // Debounced resize handler - re-initalise the dots
-function handleResize() {
+const handleResize = () => {
   timeout && clearTimeout(timeout);
   timeout = setTimeout(() => {
     numberOfDots = Math.floor((canvas.width * canvas.height) / 20000);
@@ -33,20 +33,20 @@ function handleResize() {
 
     setInitialDotCoordinates();
   }, 500);
-}
+};
 
 window.addEventListener("resize", handleResize);
 
 // Store mouse location data for interactive fun
-function handleMouseMove(e) {
+const handleMouseMove = (e) => {
   mouseX = e.pageX - document.body.scrollLeft;
   mouseY = e.pageY - document.body.scrollTop;
-}
+};
 
 window.addEventListener("mousemove", handleMouseMove);
 
 // Update dot coordinate locations based on speed, angle and coordinates
-function updateDotCoordinates() {
+const updateDotCoordinates = () => {
   dotCoordinates.forEach((dotCoordinate) => {
     dotCoordinate.x +=
       Math.cos((-dotCoordinate.angle * Math.PI) / 180) * dotCoordinate.speed;
@@ -66,15 +66,15 @@ function updateDotCoordinates() {
       dotCoordinate.y = canvas.height;
     }
   });
-}
+};
 
 // Render triangle
-function drawTriangle(
+const drawTriangle = (
   firstCoordinate,
   secondCoordinate,
   thirdCoordinate,
   totalDistance
-) {
+) => {
   ctx.beginPath();
   ctx.moveTo(firstCoordinate.x, firstCoordinate.y);
   ctx.lineTo(secondCoordinate.x, secondCoordinate.y);
@@ -85,20 +85,20 @@ function drawTriangle(
     0.2 * Math.pow(1 - totalDistance / (3 * connectDistance), 3)
   }`;
   ctx.fill();
-}
+};
 
 // Render dot
-function drawDot(coordinates) {
+const drawDot = (coordinates) => {
   ctx.beginPath();
   ctx.arc(coordinates.x, coordinates.y, 1, 0, 2 * Math.PI);
   ctx.closePath();
 
   ctx.fillStyle = "rgba(127, 127, 127, 0.5)";
   ctx.fill();
-}
+};
 
 // Render dots and all possible triangles
-function renderDots() {
+const renderDots = () => {
   for (let i = 0; i < dotCoordinates.length; i++) {
     const firstCoordinates = dotCoordinates[i];
     drawDot(firstCoordinates);
@@ -163,20 +163,20 @@ function renderDots() {
       }
     }
   }
-}
+};
 
 // Animation loop
-function draw() {
+const draw = () => {
   canvas.width = window.innerWidth;
   canvas.height = document.body.scrollHeight;
 
   updateDotCoordinates();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   renderDots();
-}
+};
 
 // Animation is tied to refresh rate so we need to force 60 FPS
-function throttleAnimationLoop(func) {
+const throttleAnimationLoop = (func) => {
   let then = new Date().getTime();
   let fps = 60;
   let interval = 1000 / fps;
@@ -191,6 +191,6 @@ function throttleAnimationLoop(func) {
       func();
     }
   })();
-}
+};
 
 throttleAnimationLoop(draw);
