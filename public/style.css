@@ -57,6 +57,7 @@ canvas {
 .header-wrapper {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -304,6 +305,10 @@ canvas {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    height: 1.5rem;
+  }
+
   .header {
     margin-bottom: 5rem;
   }
