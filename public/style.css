@@ -1,12 +1,12 @@
 :root {
-  --background: #fff;
+  --background: #fafafa;
   --accent-1: rgba(0, 0, 0, 0.1);
   --foreground: #111;
   --foreground-secondary: #666;
   --invertValue: 0;
   --shadow: 0 50px 100px rgba(0, 0, 0, 0.15);
   --text-accent: #ff5555;
-  --project-background-color: #fff;
+  --project-background: rgba(255, 255, 255, 0.15);
 }
 
 :root.dark {
@@ -15,7 +15,7 @@
   --foreground: #fff;
   --foreground-secondary: #888;
   --invertValue: 1;
-  --project-background-color: #222;
+  --project-background: rgba(255, 255, 255, 0.1);
   --text-accent: #bd93f9;
 }
 
@@ -235,7 +235,8 @@ canvas {
   overflow: hidden;
   box-shadow: var(--shadow);
   max-width: 30rem;
-  background: var(--project-background-color);
+  background: var(--project-background);
+  backdrop-filter: blur(5px);
 }
 
 .project-body {
