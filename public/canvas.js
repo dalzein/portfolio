@@ -15,7 +15,7 @@ const setInitialDotCoordinates = () => {
     dotCoordinates.push({
       x: Math.floor(Math.random() * canvas.width),
       y: Math.floor(Math.random() * canvas.height),
-      speed: Math.random() * 2 + 0.1,
+      speed: Math.random() * 1 + 0.1,
       angle: Math.floor(Math.random() * 360),
       connectedDots: [],
     });
@@ -82,7 +82,7 @@ const drawTriangle = (
   ctx.closePath();
 
   ctx.fillStyle = `rgba(127, 127, 127, ${
-    0.2 * Math.pow(1 - totalDistance / (3 * connectDistance), 3)
+    0.2 * (1 - 0.3 * Math.pow(totalDistance / connectDistance, 3))
   }`;
   ctx.fill();
 };
