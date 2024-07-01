@@ -135,30 +135,6 @@ themeToggle.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark");
 });
 
-// Project wrapper click listener
-document
-  .getElementById("driftjs")
-  .addEventListener("click", () => window.open("https://driftjs.io", "_blank"));
-
-document
-  .getElementById("notish")
-  .addEventListener("click", () => window.open("https://notish.io", "_blank"));
-
-document
-  .getElementById("deciball")
-  .addEventListener("click", () =>
-    window.open("https://deciball.io", "_blank")
-  );
-
-document
-  .getElementById("absolutemasonry")
-  .addEventListener("click", () =>
-    window.open("https://github.com/dalzein/absolute-masonry", "_blank")
-  );
-
-// Suppress bubbling from anchor clicks within wrapper
-document
-  .querySelectorAll(".project-wrapper a")
-  .forEach((element) =>
-    element.addEventListener("click", (e) => e.stopPropagation())
-  );
+const goTo = (url) => {
+  window.open(url, "_blank");
+};
