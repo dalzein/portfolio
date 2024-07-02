@@ -138,3 +138,10 @@ themeToggle.addEventListener("click", () => {
 const goTo = (url) => {
   window.open(url, "_blank");
 };
+
+// Suppress bubbling from anchor clicks within wrapper
+document
+  .querySelectorAll(".project-wrapper a")
+  .forEach((element) =>
+    element.addEventListener("click", (e) => e.stopPropagation())
+  );
