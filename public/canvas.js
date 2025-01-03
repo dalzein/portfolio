@@ -1,6 +1,6 @@
 let timeout;
 const canvas = document.querySelector("canvas");
-canvas.width = window.innerWidth;
+canvas.width = document.documentElement.clientWidth;;
 canvas.height = document.body.scrollHeight;
 let ctx = canvas.getContext("2d");
 let numberOfDots = Math.floor((canvas.width * canvas.height) / 20000);
@@ -81,7 +81,7 @@ const drawTriangle = (
   ctx.lineTo(thirdCoordinate.x, thirdCoordinate.y);
   ctx.closePath();
 
-  ctx.fillStyle = `rgba(127, 127, 127, ${
+  ctx.fillStyle = `rgba(106, 120, 149, ${
     0.2 * (1 - 0.3 * Math.pow(totalDistance / connectDistance, 3))
   }`;
   ctx.fill();
@@ -93,7 +93,7 @@ const drawDot = (coordinates) => {
   ctx.arc(coordinates.x, coordinates.y, 1, 0, 2 * Math.PI);
   ctx.closePath();
 
-  ctx.fillStyle = "rgba(127, 127, 127, 0.5)";
+  ctx.fillStyle = "rgba(106, 120, 149, 0.5)";
   ctx.fill();
 };
 
@@ -167,7 +167,7 @@ const renderDots = () => {
 
 // Animation loop
 const draw = () => {
-  canvas.width = window.innerWidth;
+  canvas.width = document.documentElement.clientWidth;
   canvas.height = document.body.scrollHeight;
 
   updateDotCoordinates();

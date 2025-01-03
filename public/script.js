@@ -1,6 +1,6 @@
 // Typewriter effect fun
 const text = [
-  "Hello!",
+  "<Hello!>",
   "I'm a full-stack developer that likes to make cool stuff :)",
 ];
 
@@ -139,7 +139,7 @@ const goTo = (url) => {
   window.open(url, "_blank");
 };
 
-// Suppress bubbling from anchor clicks within wrapper
+// Suppress anchor click events from bubbling
 document
   .querySelectorAll(".project-wrapper a")
   .forEach((element) =>
