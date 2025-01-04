@@ -25,7 +25,6 @@
   margin: 0;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  transition: all 250ms ease;
 }
 
 body {
@@ -37,19 +36,6 @@ body {
   margin: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.noise-filter {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 7rem;
-  background-repeat: repeat;
-  background-image: url("noise-filter.png");
-  opacity: 0.05;
-  pointer-events: none;
 }
 
 header {
@@ -174,59 +160,36 @@ canvas {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
 }
 
-.code-box {
-  height: 16rem;
-  max-width: 36rem;
+.about-section p {
+  font-size: 2rem;
 }
 
-#code-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-#code-wrapper p {
-  text-align: center;
-  font-size: 2.25rem;
-  line-height: 1.3;
-  color: var(--foreground);
-}
-
-#code-wrapper p:not(:last-of-type) {
-  margin-bottom: 1rem;
-}
-
-#code-wrapper p.active::after {
-  content: "";
-  width: 0.25rem;
-  height: 2.25rem;
-  background: var(--foreground);
-  display: inline-block;
-  margin-left: 0.3rem;
-  position: relative;
-  top: 0.3rem;
-}
-
-#code-wrapper p.active.blink::after {
-  animation: blink infinite 0.75s step-end;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-#code-wrapper p .accent {
+.about-section .hello-text {
   color: var(--text-accent);
+}
+
+.about-section span {
+  opacity: 1;
+  transform: translateY(0rem);
+  filter: blur(0);
+  display: inline-block;
+  transition-property: transform, filter, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  transition-delay: 500ms;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(1rem);
+    filter: blur(10px);
+  }
+}
+
+.about-section .sub-text span {
+  transition-delay: calc(var(--i) * 250ms + 1000ms);
 }
 
 .projects-section {
@@ -322,6 +285,19 @@ canvas {
   border-radius: 2rem;
   background: var(--project-border);
   color: var(--foreground-secondary);
+}
+
+.noise-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 7rem;
+  background-repeat: repeat;
+  background-image: url("noise-filter.png");
+  opacity: 0.06;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
