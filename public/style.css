@@ -127,6 +127,7 @@ canvas {
   justify-content: space-between;
   flex-direction: column;
   pointer-events: none;
+  transition: margin 250ms ease;
 }
 
 :root.dark .theme-slider {
@@ -148,6 +149,7 @@ canvas {
 
 .icon-wrapper path {
   color: var(--foreground);
+  transition: color 250ms ease;
 }
 
 .moon {
