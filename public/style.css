@@ -3,7 +3,6 @@
   --foreground: #111;
   --foreground-secondary: #666;
   --invertValue: 0;
-  --shadow: 0 50px 100px rgba(0, 0, 0, 0.15);
   --text-accent: #fa003f;
   --project-background: #fff;
   --project-border: #eaeaea;
@@ -217,7 +216,6 @@ canvas {
   border-radius: 1.75rem;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: var(--shadow);
   max-width: 30rem;
   background: var(--project-background);
   backdrop-filter: blur(5px);
