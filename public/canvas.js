@@ -167,7 +167,7 @@ const renderDots = () => {
 
 // Animation loop
 const draw = () => {
-  canvas.width = document.documentElement.clientWidth;
+  canvas.width = canvas.clientWidth;
   canvas.height = document.body.scrollHeight;
 
   updateDotCoordinates();
