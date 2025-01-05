@@ -1,7 +1,7 @@
 let timeout;
 const canvas = document.querySelector("canvas");
 canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
+canvas.height = document.body.scrollHeight;
 let ctx = canvas.getContext("2d");
 let numberOfDots = Math.floor((canvas.width * canvas.height) / 20000);
 let dotCoordinates = [];
@@ -168,7 +168,7 @@ const renderDots = () => {
 // Animation loop
 const draw = () => {
   canvas.width = canvas.clientWidth;
-  canvas.height = canvas.clientHeight;
+  canvas.height = document.body.scrollHeight;
 
   updateDotCoordinates();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
