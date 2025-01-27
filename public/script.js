@@ -8,14 +8,3 @@ themeToggle.addEventListener("click", () => {
   );
   document.documentElement.classList.toggle("dark");
 });
-
-const goTo = (url) => {
-  window.open(url, "_blank");
-};
-
-// Suppress anchor click events from bubbling
-document
-  .querySelectorAll(".project-wrapper a")
-  .forEach((element) =>
-    element.addEventListener("click", (e) => e.stopPropagation())
-  );
