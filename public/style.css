@@ -142,7 +142,7 @@ h1 {
 .projects-wrapper {
   -webkit-tap-highlight-color: transparent;
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
