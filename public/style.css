@@ -1,19 +1,19 @@
 :root {
-  --background: hsl(0, 0%, 98%);
-  --foreground: hsl(0, 0%, 0%);
-  --foreground-secondary: hsl(0, 0%, 40%);
-  --accent-1: hsl(0, 0%, 100%);
-  --accent-2: hsl(0, 0%, 96%);
-  --accent-3: hsl(0, 0%, 92%);
+  --background: hsl(0 0% 98%);
+  --foreground: hsl(0 0% 0%);
+  --foreground-secondary: hsl(0 0% 40%);
+  --accent-1: hsl(0 0% 100%);
+  --accent-2: hsl(0 0% 96%);
+  --accent-3: hsl(0 0% 92%);
 }
 
 :root.dark {
-  --background: hsl(0, 0%, 0%);
-  --foreground: hsL(0, 0%, 100%);
-  --foreground-secondary: hsl(0, 0%, 50%);
-  --accent-1: hsl(0, 0%, 4%);
-  --accent-2: hsl(0, 0%, 8%);
-  --accent-3: hsl(0, 0%, 12%);
+  --background: hsl(0 0% 0%);
+  --foreground: hsL(0 0% 100%);
+  --foreground-secondary: hsl(0 0% 50%);
+  --accent-1: hsl(0 0% 4%);
+  --accent-2: hsl(0 0% 8%);
+  --accent-3: hsl(0 0% 12%);
 }
 
 * {
