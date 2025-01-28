@@ -5,7 +5,7 @@
   --accent-1: hsl(0 0% 100%);
   --accent-2: hsl(0 0% 96%);
   --accent-3: hsl(0 0% 92%);
-  --accent-3: hsl(0 0% 88%);
+  --accent-4: hsl(0 0% 88%);
 }
 
 :root.dark {
