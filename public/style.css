@@ -1,17 +1,19 @@
 :root {
-  --background: #fafafa;
-  --foreground: #000;
-  --foreground-secondary: #666;
-  --project-background: #fff;
-  --project-border: #eaeaea;
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(0, 0%, 0%);
+  --foreground-secondary: hsl(0, 0%, 40%);
+  --accent-1: hsl(0, 0%, 100%);
+  --accent-2: hsl(0, 0%, 96%);
+  --accent-3: hsl(0, 0%, 92%);
 }
 
 :root.dark {
-  --background: #000;
-  --foreground: #fff;
-  --foreground-secondary: #888;
-  --project-background: rgba(255, 255, 255, 0.01);
-  --project-border: rgba(255, 255, 255, 0.1);
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsL(0, 0%, 100%);
+  --foreground-secondary: hsl(0, 0%, 50%);
+  --accent-1: hsl(0, 0%, 4%);
+  --accent-2: hsl(0, 0%, 8%);
+  --accent-3: hsl(0, 0%, 12%);
 }
 
 * {
@@ -171,10 +173,10 @@ h1 {
   cursor: pointer;
   overflow: hidden;
   max-width: 30rem;
-  background: var(--project-background);
+  background: var(--accent-1);
   backdrop-filter: blur(5px);
   flex-grow: 1;
-  border: 1px solid var(--project-border);
+  border: 1px solid var(--accent-3);
   animation: fadeIn 500ms ease calc(var(--i) * 250ms) forwards;
 }
 
@@ -193,6 +195,7 @@ h1 {
   width: 100%;
   border-radius: 1rem;
   vertical-align: middle;
+  border: 1px solid var(--accent-3);
 }
 
 .project-header {
@@ -243,8 +246,8 @@ h1 {
   min-width: 2.25rem;
   padding: 0 1rem;
   border-radius: 1rem;
-  background: var(--project-background);
-  border: 1px solid var(--project-border);
+  background: var(--accent-2);
+  border: 1px solid var(--accent-3);
   color: var(--foreground-secondary);
   line-height: 1;
 }
