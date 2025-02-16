@@ -21,7 +21,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy app to S3 bucket
-        run: aws s3 sync ./public/ s3://dalzein-portfolio --delete
+        run: aws s3 sync ./dist/ s3://dalzein-portfolio --delete
 
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

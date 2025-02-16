@@ -1,0 +1,38 @@
+---
+type Props = {
+  videoSrc: string;
+  transitionName: string;
+};
+
+const { videoSrc, transitionName } = Astro.props;
+---
+
+<div class="project-video">
+  <video src={videoSrc} autoplay loop muted transition:persist={transitionName}
+  ></video>
+</div>
+
+<style>
+  .project-video {
+    aspect-ratio: 3 / 2;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    background: var(--background);
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  :global(.active) .project-video {
+    view-transition-name: project-video;
+  }
+
+  :global(::view-transition-group(project-video)) {
+    z-index: 999;
+  }
+</style>

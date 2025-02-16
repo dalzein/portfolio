@@ -1,0 +1,49 @@
+---
+import ProjectVideo from "./ProjectVideo.astro";
+
+type Props = {
+  id: string;
+  videoSrc: string;
+};
+
+const { id, videoSrc } = Astro.props;
+---
+
+<a class="project-tile" href=`/${id}`>
+  <div class="project-header-ref"></div>
+  <ProjectVideo videoSrc={videoSrc} transitionName={id} />
+  <div class="project-details-ref"></div>
+</a>
+
+<style>
+  .project-tile {
+    transition: scale 250ms ease;
+    position: relative;
+  }
+
+  .project-tile:hover {
+    scale: 1.025;
+  }
+
+  .project-header-ref,
+  .project-details-ref {
+    width: 100%;
+    position: absolute;
+  }
+
+  .project-header-ref {
+    top: 1rem;
+  }
+
+  .project-details-ref {
+    bottom: 1rem;
+  }
+
+  .project-tile.active .project-header-ref {
+    view-transition-name: project-header;
+  }
+
+  .project-tile.active .project-details-ref {
+    view-transition-name: project-details;
+  }
+</style>

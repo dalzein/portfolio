@@ -1,0 +1,33 @@
+---
+type Props = {
+  href: string;
+  target?: "_blank" | "_parent" | "_self" | "_top";
+};
+
+const { href, target = "_self" } = Astro.props;
+---
+
+<a class="button-link" href={href} target={target}>
+  <slot />
+</a>
+
+<style>
+  .button-link {
+    height: 3rem;
+    border-radius: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    background: var(--foreground);
+    color: var(--background);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: scale 250ms ease;
+  }
+
+  .button-link:hover {
+    scale: 1.05;
+  }
+</style>

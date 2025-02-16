@@ -1,0 +1,70 @@
+---
+import Dark from "./svg/Dark.astro";
+import Light from "./svg/Light.astro";
+---
+
+<div class="theme-toggle" onclick="handleClick()">
+  <div class="theme-slider">
+    <div class="icon-wrapper dark">
+      <Dark />
+    </div>
+    <div class="icon-wrapper light">
+      <Light />
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  handleClick = () => {
+    localStorage.setItem(
+      "theme",
+      document.documentElement.classList.contains("dark") ? "light" : "dark"
+    );
+    document.documentElement.classList.toggle("dark");
+  };
+</script>
+
+<style>
+  .icon-wrapper {
+    height: 2.25rem;
+    width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .theme-toggle:hover :global(svg) {
+    color: var(--foreground);
+  }
+
+  .theme-slider {
+    margin-top: -2.25rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    pointer-events: none;
+    transition: margin 250ms ease;
+  }
+
+  :root.dark .theme-slider {
+    margin-top: 0rem;
+  }
+
+  :root.dark .theme-slider .light :global(svg) {
+    opacity: 0;
+  }
+
+  :root.dark .theme-toggle .dark :global(svg) {
+    opacity: 1;
+  }
+
+  .theme-toggle .dark :global(svg) {
+    opacity: 0;
+  }
+</style>

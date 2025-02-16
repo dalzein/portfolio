@@ -1,0 +1,75 @@
+---
+import IconLink from "../components/IconLink.astro";
+import Projects from "../components/Projects.astro";
+import GitHub from "../components/svg/GitHub.astro";
+import LinkedIn from "../components/svg/LinkedIn.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <header>
+    <div class="header-left">
+      <h1>
+        <span class="logo-name-wrapper">
+          <span class="logo-back" transition:name="logo-back"></span>
+          <span transition:name="logo-name">Daniel Alzein</span>
+        </span>
+        <span>Software Engineer</span>
+      </h1>
+    </div>
+    <div class="header-right">
+      <ThemeToggle />
+      <IconLink href="https://github.com/dalzein">
+        <GitHub />
+      </IconLink>
+      <IconLink href="https://www.linkedin.com/in/daniel-alzein">
+        <LinkedIn />
+      </IconLink>
+    </div>
+  </header>
+  <main>
+    <Projects />
+  </main>
+</Layout>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    margin: 0 auto 2rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .logo-name-wrapper {
+    position: relative;
+  }
+
+  .logo-back {
+    height: 1.25rem;
+    width: 1.25rem;
+    left: 0;
+    position: absolute;
+  }
+
+  .header-right {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      margin: 0;
+    }
+  }
+</style>

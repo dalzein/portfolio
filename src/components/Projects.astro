@@ -1,0 +1,34 @@
+---
+import { projects } from "../data/projects";
+import ProjectTile from "./ProjectTile.astro";
+---
+
+<div class="projects">
+  {
+    projects.map(({ id, videoSrc }) => (
+      <ProjectTile id={id} videoSrc={videoSrc} />
+    ))
+  }
+</div>
+
+<style>
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .projects {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
