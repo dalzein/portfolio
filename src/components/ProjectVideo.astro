@@ -7,14 +7,15 @@ type Props = {
 const { videoSrc, transitionName } = Astro.props;
 ---
 
-<div class="project-video" transition:persist={transitionName}>
-  <video src={videoSrc} autoplay loop muted></video>
+<div class="project-video">
+  <video src={videoSrc} autoplay loop muted transition:persist={transitionName}
+  ></video>
 </div>
 
 <style>
   .project-video {
     aspect-ratio: 3 / 2;
-    border-radius: 1rem;
+    border-radius: 3cqw;
     overflow: hidden;
     border: 1px solid var(--border);
     text-decoration: none;

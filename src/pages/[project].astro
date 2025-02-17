@@ -47,7 +47,11 @@ const { id, name, videoSrc, projectUrl, gitHubUrl, builtWith, description } =
     </div>
   </header>
   <main>
-    <a href={projectUrl || gitHubUrl} target="_blank" class="active">
+    <a
+      href={projectUrl || gitHubUrl}
+      target="_blank"
+      class="active video-wrapper"
+    >
       <ProjectVideo videoSrc={videoSrc} transitionName={id} />
     </a>
     <div class="details" transition:name="project-details">
@@ -87,6 +91,10 @@ const { id, name, videoSrc, projectUrl, gitHubUrl, builtWith, description } =
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .video-wrapper {
+    container-type: inline-size;
   }
 
   .logo {

@@ -121,23 +121,25 @@ import { ClientRouter } from "astro:transitions";
 
 <script>
   document.addEventListener("astro:before-preparation", (event) => {
-    if (event.from.pathname === "/") {
-      const target = document.querySelector(`[href="${event.to.pathname}"]`);
+    const from = event.from.pathname;
+    const to = event.to.pathname;
+
+    if (from === "/") {
+      const target = document.querySelector(`[href="${to}"]`);
       target?.classList.toggle("active", true);
     }
 
-    document.addEventListener(
-      "astro:after-preparation",
-      () => {
-        const pathName = event.to.pathname;
-        if (pathName === "/") {
-          const id = event.from.pathname.slice(1);
+    if (to === "/") {
+      document.addEventListener(
+        "astro:after-preparation",
+        () => {
+          const id = from.replaceAll("/", "");
           const target = event.newDocument.querySelector(`[href="/${id}"]`);
           target?.classList.toggle("active", true);
-        }
-      },
-      { once: true }
-    );
+        },
+        { once: true }
+      );
+    }
   });
 
   document.addEventListener("astro:page-load", () => {
