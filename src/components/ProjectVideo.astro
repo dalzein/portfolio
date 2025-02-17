@@ -7,9 +7,8 @@ type Props = {
 const { videoSrc, transitionName } = Astro.props;
 ---
 
-<div class="project-video">
-  <video src={videoSrc} autoplay loop muted transition:persist={transitionName}
-  ></video>
+<div class="project-video" transition:persist={transitionName}>
+  <video src={videoSrc} autoplay loop muted></video>
 </div>
 
 <style>
@@ -34,5 +33,9 @@ const { videoSrc, transitionName } = Astro.props;
 
   :global(::view-transition-group(project-video)) {
     z-index: 999;
+  }
+
+  :global(::view-transition-new(project-video)) {
+    animation: none;
   }
 </style>
