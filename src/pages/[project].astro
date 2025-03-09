@@ -1,11 +1,11 @@
 ---
 import ButtonLink from "../components/ButtonLink.astro";
 import ProjectVideo from "../components/ProjectVideo.astro";
+import ArrowUpRight from "../components/svg/ArrowUpRight.astro";
+import Back from "../components/svg/Back.astro";
+import GitHub from "../components/svg/GitHub.astro";
 import { projects } from "../data/projects";
 import Layout from "../layouts/Layout.astro";
-import Back from "../components/svg/Back.astro";
-import ArrowOutward from "../components/svg/ArrowOutward.astro";
-import GitHub from "../components/svg/GitHub.astro";
 
 export const getStaticPaths = () => {
   return projects.map((project) => ({
@@ -39,7 +39,7 @@ const { id, name, videoSrc, projectUrl, gitHubUrl, builtWith, description } =
           projectUrl && (
             <ButtonLink href={projectUrl} target="_blank">
               <span class="link-text">Visit</span>
-              <ArrowOutward />
+              <ArrowUpRight />
             </ButtonLink>
           )
         }
