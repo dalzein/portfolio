@@ -2,6 +2,7 @@ import deciball from "../assets/deciball.mp4";
 import draggableMasonry from "../assets/draggable-masonry.mp4";
 import driftjs from "../assets/driftjs.mp4";
 import propago from "../assets/propago.mp4";
+import pulsar from "../assets/pulsar.mp4";
 
 type Project = {
   id: string;
@@ -55,6 +56,17 @@ export const projects: Project[] = [
     builtWith: ["TypeScript", "Next.js"],
     description: [
       "A web app for the consulting firm Propago, written in Next.js.",
+    ],
+  },
+  {
+    id: "pulsar",
+    name: "Pulsar Mouse Configurator",
+    videoSrc: pulsar,
+    builtWith: ["TypeScript", "React.js"],
+    description: [
+      "A working browser-based mouse configurator prototype created for the South Korean gaming peripherlas company Pulsar Gaming Gears.",
+      "Uses the native JavaScript `WebHID API` to communicate with the device and configure its settings.",
+      "Source code and live demo cannot be shared publicly.",
     ],
   },
 ];
