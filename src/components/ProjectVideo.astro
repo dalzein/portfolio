@@ -8,8 +8,13 @@ const { videoSrc, transitionName } = Astro.props;
 ---
 
 <div class="project-video">
-  <video src={videoSrc} autoplay loop muted transition:persist={transitionName}
-  ></video>
+  <video
+    src={videoSrc}
+    autoplay
+    loop
+    muted
+    playsinline
+    transition:persist={transitionName}></video>
 </div>
 
 <style>
