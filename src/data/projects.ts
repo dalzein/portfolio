@@ -23,7 +23,7 @@ export const projects: Project[] = [
     gitHubUrl: "https://github.com/dalzein/driftjs",
     builtWith: ["JavaScript"],
     description: [
-      "A 2D drifting game written in native JavaScript using a bunch of math, `HTML <canvas>`, and the coolest `<div>` on the planet. `HTML <canvas>` was used purely for the tyre marks. Rendering is handled with `requestAnimationFrame()`. Supports mobile with touch controls.",
+      "A 2D drifting game built with native JavaScript, a bunch of math, `HTML <canvas>`, and the coolest `<div>` on the planet. `HTML <canvas>` was used purely for the tyre marks. Rendering is handled with `requestAnimationFrame()`. Supports mobile with touch controls.",
     ],
   },
   {
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     builtWith: ["TypeScript", "React", "Vite"],
     description: [
       "A bass-focused audio visualiser in the style of Trap Nation.",
-      "Frequency analysis and cleansing, animation logic, particle effects, etc are all completely custom and done using a bunch of math, the native `Web Audio API`, and native `HTML <canvas>`.",
+      "Frequency analysis, data cleansing, animation logic and particle effects are all completely custom and done using a bunch of math, the native `Web Audio API`, and native `HTML <canvas>`.",
     ],
   },
   {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     projectUrl: "https://propago.com.au",
     builtWith: ["TypeScript", "Next.js"],
     description: [
-      "A web app for the consulting firm Propago, written in Next.js.",
+      "A web app for the consulting firm Propago, built with Next.js.",
     ],
   },
   {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     videoSrc: pulsar,
     builtWith: ["TypeScript", "React.js"],
     description: [
-      "A working browser-based mouse configurator prototype created for the South Korean gaming peripherlas company Pulsar Gaming Gears.",
+      "A working browser-based mouse configurator prototype created for South Korean gaming peripherals company Pulsar Gaming Gears.",
       "Uses the native JavaScript `WebHID API` to communicate with the device and configure its settings.",
       "Source code and live demo cannot be shared publicly.",
     ],
