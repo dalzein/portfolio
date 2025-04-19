@@ -79,24 +79,24 @@ import { ClientRouter } from "astro:transitions";
 
   :global(::view-transition-old(root)) {
     transform-origin: top center;
-    animation: fade-out 500ms ease;
+    animation: fade-out 400ms ease;
   }
 
   :global(::view-transition-new(root)) {
     transform-origin: top center;
-    animation: fade-in 500ms ease;
+    animation: fade-in 400ms ease;
   }
 
   @keyframes fade-out {
     to {
-      transform: scale(0.9);
+      transform: scale(0.8);
       opacity: 0;
     }
   }
 
   @keyframes fade-in {
     0% {
-      transform: scale(0.9);
+      transform: scale(0.8);
       opacity: 0;
     }
   }
