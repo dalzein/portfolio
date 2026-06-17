@@ -1,7 +1,7 @@
+import booworks from "../assets/booworks.mp4";
 import deciball from "../assets/deciball.mp4";
 import draggableMasonry from "../assets/draggable-masonry.mp4";
 import driftjs from "../assets/driftjs.mp4";
-import propago from "../assets/propago.mp4";
 import pulsar from "../assets/pulsar.mp4";
 
 type Project = {
@@ -15,6 +15,17 @@ type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "booworks",
+    name: "Booworks",
+    videoSrc: booworks,
+    gitHubUrl: "https://github.com/dalzein/booworks",
+    builtWith: ["TypeScript", "React", "Vite", "Motion"],
+    description: [
+      "An experimental lab of satisfying, ghost-themed UI toys, fronted by a cute ghost that follows your cursor and reacts as you play.",
+      "Each toy is a self-contained experiment in what modern CSS and `motion` can do. The physics run on imperative `requestAnimationFrame` loops so dragging never triggers React re-renders.",
+    ],
+  },
   {
     id: "driftjs",
     name: "Drift.js",
@@ -46,16 +57,6 @@ export const projects: Project[] = [
     builtWith: ["JavaScript"],
     description: [
       "A JavaScript library for creating reorderable masonry layouts, where elements are arranged in a grid but are not constrained to uniform row heights. Instead, items are placed in an optimal position based on available vertical space.",
-    ],
-  },
-  {
-    id: "propago",
-    name: "Propago",
-    videoSrc: propago,
-    projectUrl: "https://propago.com.au",
-    builtWith: ["TypeScript", "Next.js"],
-    description: [
-      "A web app for the consulting firm Propago, built with Next.js.",
     ],
   },
   {
