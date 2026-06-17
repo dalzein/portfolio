@@ -23,7 +23,7 @@ export const projects: Project[] = [
     builtWith: ["TypeScript", "React", "Vite", "Motion"],
     description: [
       "An experimental lab of satisfying, ghost-themed UI toys, fronted by a cute ghost that follows your cursor and reacts as you play.",
-      "Each toy is a self-contained experiment in what modern CSS and `motion` can do. The physics run on imperative `requestAnimationFrame` loops so dragging never triggers React re-renders.",
+      "Each toy is a self-contained experiment in what modern CSS and motion can do. The physics run on imperative requestAnimationFrame loops so dragging never triggers React re-renders.",
     ],
   },
   {
@@ -32,9 +32,9 @@ export const projects: Project[] = [
     videoSrc: driftjs,
     projectUrl: "https://driftjs.io",
     gitHubUrl: "https://github.com/dalzein/driftjs",
-    builtWith: ["JavaScript"],
+    builtWith: ["JavaScript", "HTML <canvas>", "Web Audio API"],
     description: [
-      "A 2D drifting game built with native JavaScript, a bunch of math, `HTML <canvas>`, and the coolest `<div>` on the planet. `HTML <canvas>` was used purely for the tyre marks. Rendering is handled with `requestAnimationFrame()`. Supports mobile with touch controls.",
+      "A 2D arcade drifting game written in native JavaScript with HTML <canvas> and a lot of math, with the car, tyre smoke, skid marks and score popups all rendered on canvas. Velocity-vector grip physics break the rear loose into catchable drifts that build a combo score, juiced up with screen shake, boost, and fully procedural engine and tyre-screech audio via the Web Audio API. Supports mobile touch controls.",
     ],
   },
   {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     builtWith: ["TypeScript", "React", "Vite"],
     description: [
       "A bass-focused audio visualiser in the style of Trap Nation.",
-      "Frequency analysis, data cleansing, animation logic and particle effects are all completely custom and done using a bunch of math, the native `Web Audio API`, and native `HTML <canvas>`.",
+      "Frequency analysis, data cleansing, animation logic and particle effects are all completely custom and done using a bunch of math, the native Web Audio API, and native HTML <canvas>.",
     ],
   },
   {
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     builtWith: ["TypeScript", "React.js"],
     description: [
       "A working browser-based mouse configurator prototype created for South Korean gaming peripherals company Pulsar Gaming Gears.",
-      "Uses the native JavaScript `WebHID API` to communicate with the device and configure its settings.",
+      "Uses the native JavaScript WebHID API to communicate with the device and configure its settings.",
       "Source code and live demo cannot be shared publicly.",
     ],
   },
