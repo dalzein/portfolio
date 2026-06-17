@@ -19,6 +19,7 @@ export const projects: Project[] = [
     id: "booworks",
     name: "Booworks",
     videoSrc: booworks,
+    projectUrl: "https://booworks.app",
     gitHubUrl: "https://github.com/dalzein/booworks",
     builtWith: ["TypeScript", "React", "Vite", "Motion"],
     description: [
