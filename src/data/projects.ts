@@ -31,7 +31,7 @@ export const projects: Project[] = [
     id: "driftjs",
     name: "Drift.js",
     videoSrc: driftjs,
-    projectUrl: "https://driftjs.io",
+    projectUrl: "https://driftjs.app",
     gitHubUrl: "https://github.com/dalzein/driftjs",
     builtWith: ["JavaScript", "HTML <canvas>", "Web Audio API"],
     description: [
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     id: "deciball",
     name: "Deciball",
     videoSrc: deciball,
-    projectUrl: "https://deciball.io",
+    projectUrl: "https://deciball.app",
     gitHubUrl: "https://github.com/dalzein/deciball",
     builtWith: ["TypeScript", "React", "Vite"],
     description: [
