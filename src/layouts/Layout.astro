@@ -120,6 +120,8 @@ import { ClientRouter } from "astro:transitions";
 </script>
 
 <script>
+  let returningFromId = null;
+
   document.addEventListener("astro:before-preparation", (event) => {
     const from = event.from.pathname;
     const to = event.to.pathname;
@@ -130,11 +132,13 @@ import { ClientRouter } from "astro:transitions";
     }
 
     if (to === "/") {
+      returningFromId = from.replaceAll("/", "");
       document.addEventListener(
         "astro:after-preparation",
         () => {
-          const id = from.replaceAll("/", "");
-          const target = event.newDocument.querySelector(`[href="/${id}"]`);
+          const target = event.newDocument.querySelector(
+            `[href="/${returningFromId}"]`
+          );
           target?.classList.toggle("active", true);
         },
         { once: true }
@@ -146,5 +150,18 @@ import { ClientRouter } from "astro:transitions";
     document
       .querySelector(".project-tile.active")
       ?.classList.toggle("active", false);
+
+    // Chrome won't paint the <video> nodes the transition adopts from the
+    // fetched index, leaving blank tiles. Cloning rebuilds them in the live
+    // document, forcing a paint. Skip the persisted (still-painting) one.
+    if (returningFromId !== null) {
+      document.querySelectorAll("video").forEach((video) => {
+        if (video.dataset.astroTransitionPersist === returningFromId) return;
+        const clone = video.cloneNode(true);
+        video.replaceWith(clone);
+        clone.play?.().catch(() => {});
+      });
+      returningFromId = null;
+    }
   });
 </script>
